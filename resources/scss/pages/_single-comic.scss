@@ -1,0 +1,144 @@
+@use '../partials/variables' as *;
+
+#blue-bg {
+	position: relative;
+	height: 4rem;
+
+	.poster {
+		position: absolute;
+		bottom: 1rem;
+		height: 220px;
+		border: 1px solid white;
+
+		small {
+			background-color: $lightblue;
+			color: white;
+			position: absolute;
+			text-align: center;
+
+			&.label-top {
+				top: 0;
+				left: 0;
+			}
+
+			&.label-bottom {
+				width: 100%;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+}
+
+// prima section
+#comic-info {
+	.row {
+		.col-left {
+			width: 66%;
+
+			h3 {
+				color: black;
+			}
+
+			#shop-info {
+				font-weight: 600;
+				background-color: rgb(63, 205, 87);
+				color: white;
+				border-bottom: .5px solid black;
+
+				span {
+					display: inline-block;
+				}
+
+				span.lightgreen {
+					color: rgb(181, 247, 193)
+				}
+
+				.col-4 {
+					border-left: .5px solid black;
+				}
+			}
+
+			p {
+				color: rgb(126, 126, 126);
+			}
+		}
+
+		.col-right {
+			width: 30%;
+			position: relative;
+
+			h6 {
+				position: absolute;
+				bottom: 100%;
+				right: 0;
+				color: rgb(94, 93, 93);
+			}
+		}
+	}
+}
+
+// seconda section 
+#comic-details {
+	border-top: $grey-05-px;
+	border-bottom: $grey-05-px;
+	background-color: rgb(245, 245, 245);
+	padding-bottom: 80px;
+
+	.row {
+
+		.col-left,
+		.col-right {
+			width: calc(50% - 1.5rem);
+			padding: 0;
+
+			h6 {
+				font-size: 1.35rem;
+				padding-bottom: 1rem;
+				margin-bottom: 0;
+				border-bottom: $grey-05-px;
+			}
+
+			.details {
+				.row {
+					border-bottom: $grey-05-px;
+					padding: .5rem 0;
+
+					& * {
+						padding: 0;
+						line-height: 1rem;
+					}
+
+					a {
+						&:not(:last-child)::after {
+							content: ',';
+							color: black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// navbar
+#navbar {
+	background-color: rgb(245, 245, 245);
+
+	.row {
+		.col-3 {
+			padding: 1rem;
+			border-right: $grey-05-px;
+			cursor: pointer;
+
+			&:first-child {
+				border-left: $grey-05-px;
+			}
+
+			h6 {
+				color: rgb(159, 159, 159);
+				font-size: .8rem;
+			}
+		}
+	}
+}

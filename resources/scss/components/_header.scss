@@ -1,0 +1,49 @@
+@use '../partials/variables' as *;
+
+header {
+	a {
+		color: rgb(46, 46, 46);
+		font-weight: 600;
+		display: inline-block;
+		height: 5rem;
+		line-height: 5rem;
+
+		&:hover {
+			color: $brand-primary;
+		}
+	}
+
+	.active {
+		a {
+			color: $brand-primary;
+			border-bottom: 3px solid $brand-primary;
+		}
+	}
+
+	#logo {
+		img {
+			height: 50px;
+		}
+	}
+
+	#searchbar {
+		border-bottom: 1.5px solid $brand-primary;
+		text-align: right;
+
+		input {
+			border: none;
+			width: 80%;
+			text-align: right;
+			outline: none;
+
+			&::placeholder {
+				color: black;
+			}
+		}
+
+		i {
+			vertical-align: text-bottom;
+		}
+	}
+
+}

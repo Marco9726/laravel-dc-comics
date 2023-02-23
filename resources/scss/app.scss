@@ -1,0 +1,89 @@
+@use './components/header' as *;
+@use './components/jumbotron' as *;
+@use './components/footer' as *;
+
+@use './pages/single-comic' as *;
+
+@import '~bootstrap/scss/bootstrap';
+@import './partials/variables';
+
+//generali
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: .85rem;
+	font-family: 'Mukta', sans-serif;
+	;
+}
+
+.debug {
+	border: 1px solid red;
+}
+
+.font-pt {
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.bg-my-primary {
+	background-color: $brand-primary;
+}
+
+.lightblue {
+	color: $lightblue;
+}
+
+h5,
+h3 {
+	color: white;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container-w60 {
+	width: 60%;
+	margin: 0 auto;
+}
+
+
+//main
+main {
+	#content {
+		background-color: rgb(28, 28, 28);
+
+		h3 {
+			position: relative;
+			height: 3rem;
+			line-height: 3rem;
+			bottom: 1.5rem;
+		}
+
+		.comic-card {
+			width: calc(100% / 6);
+
+			.comic-img {
+				overflow-y: hidden;
+				height: calc(60vw / 6 - 1.5rem);
+			}
+
+			a {
+				font-size: .7rem;
+			}
+		}
+	}
+}
