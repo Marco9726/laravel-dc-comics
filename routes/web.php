@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController as PageController;
+use App\Http\Controllers\PagesController as PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +27,7 @@ use App\Http\Controllers\PageController as PageController;
 // 	return view('comics', compact('headerMenu', 'footerLists', 'comics', 'socialArray'));
 // })->name('comics');
 
-Route::get('/', [PageController::class, 'show'])->name('comics');
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
 
 //ROTTA PER FILE SINGLE-COMIC
 // Route::get('/comics/{id}', function ($id) {
@@ -55,7 +55,8 @@ Route::get('/', [PageController::class, 'show'])->name('comics');
 // 	return view('single_comic', compact('comic', 'headerMenu', 'footerLists', 'date', 'socialArray'));
 // })->name('single_comic');
 // Route::get('/comics/{id}', [PageController::class, 'comic'])->name('single_comic');
-Route::get('/comics/{id}', [PageController::class, 'comic'])->name('single_comic');
+
+// Route::get('/comics/{id}', [PageController::class, 'comic'])->name('single_comic');
 
 //ROTTA PER LE PAGE DELLA NAVBAR
 Route::get('/{item}', function ($item) {
@@ -70,10 +71,4 @@ Route::get('/{item}', function ($item) {
 	return view('nav_item', compact('headerMenu', 'footerLists', 'socialArray', 'li'));
 })->name('nav_item');
 
-
-// funzione per trasformare il formato della data tramite carbon 
-function changeDate($saleDate)
-{
-	$date = $saleDate['sale_date'];
-	return \Carbon\Carbon::createFromFormat('Y-m-d', $date)->format('M d Y');
-}
+// Route::get('/')
