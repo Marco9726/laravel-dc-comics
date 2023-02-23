@@ -14,20 +14,11 @@ class DatabaseSeeder extends Seeder
 	 */
 	public function run()
 	{
-		$comics = config('comics');
+		// \App\Models\User::factory(10)->create();
 
-		foreach ($comics as $comic) {
-
-			$new_comic = new Comic();
-			$new_comic->title = $comic['title'];
-			$new_comic->description = $comic['description'];
-			$new_comic->thumb = $comic['thumb'];
-			$new_comic->price = $comic['price'];
-			$new_comic->series = $comic['series'];
-			$new_comic->sale_date = $comic['sale_date'];
-			$new_comic->type = $comic['type'];
-
-			$new_comic->save();
-		}
+		// \App\Models\User::factory()->create([
+		//     'name' => 'Test User',
+		//     'email' => 'test@example.com',
+		// ]);
 	}
 }

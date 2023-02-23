@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController as PagesController;
 /*
@@ -71,4 +72,4 @@ Route::get('/{item}', function ($item) {
 	return view('nav_item', compact('headerMenu', 'footerLists', 'socialArray', 'li'));
 })->name('nav_item');
 
-// Route::get('/')
+Route::resource('comics', ComicController::class);
