@@ -18,12 +18,9 @@
 					<ul class="d-flex justify-content-between mb-0 gap-4">
 						{{-- foreach per ciclare gli elementi dell'array associativo 'headerMenu' --}}
 						@foreach ($headerMenu as $key => $item)
-						<li class="{{-- trovare un modo per recuperare l'uri corrente e confrontarlo con la key, così da dare la classe active --}}"> 
-							
+						<li> 	
 							<a href="{{ route('comics.index')}}" class="font-pt">{{ Str::upper($key)}}</a>
-								
-						</li>
-						
+						</li>		
 						@endforeach
 					</ul>
 				</nav>

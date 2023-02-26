@@ -54,7 +54,22 @@ class ComicController extends Controller
 	 */
 	public function show($id)
 	{
-		$comic = Comic::findOrFail($id);
+		$headerMenu = config('headermenu');
+
+		$footerLists = config('footerlists');
+
+		$socialArray = config('social');
+		// $comic = Comic::findOrFail($id);
+		// che è guale a:
+		$comic = Comic::find($id);
+		if ($comic) {
+			$data = [
+				'comic' => $comic
+			];
+
+			return view('comics.show', $data, compact('headerMenu', 'footerLists', 'socialArray'));
+		}
+		abort(404);
 	}
 
 	/**

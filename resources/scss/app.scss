@@ -3,6 +3,8 @@
 @use './components/footer' as *;
 
 @use './pages/single-comic' as *;
+@use './pages/comics_index' as *;
+@use './pages/comics_show' as *;
 
 @import '~bootstrap/scss/bootstrap';
 @import './partials/variables';
