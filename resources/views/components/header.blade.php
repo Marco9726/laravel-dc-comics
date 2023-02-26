@@ -18,10 +18,12 @@
 					<ul class="d-flex justify-content-between mb-0 gap-4">
 						{{-- foreach per ciclare gli elementi dell'array associativo 'headerMenu' --}}
 						@foreach ($headerMenu as $key => $item)
-						<li class="{{ Route::currentRouteName() == $key ? 'active' : '' }}"> 
-							{{-- valore dell'href = al path definito nell'array in web.php  --}}
-							<a href="{{ route('nav_item', $item)}}" class="font-pt">{{ Str::upper($key)}}</a>
-						 </li>
+						<li class="{{-- trovare un modo per recuperare l'uri corrente e confrontarlo con la key, così da dare la classe active --}}"> 
+							
+							<a href="{{ route('comics.index')}}" class="font-pt">{{ Str::upper($key)}}</a>
+								
+						</li>
+						
 						@endforeach
 					</ul>
 				</nav>

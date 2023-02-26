@@ -14,7 +14,15 @@ class ComicController extends Controller
 	 */
 	public function index()
 	{
-		//
+		$comics = Comic::all();
+
+		$headerMenu = config('headermenu');
+
+		$footerLists = config('footerlists');
+
+		$socialArray = config('social');
+
+		return view('comics.index', compact('comics', 'headerMenu', 'footerLists', 'socialArray'));
 	}
 
 	/**

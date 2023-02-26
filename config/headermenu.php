@@ -2,9 +2,9 @@
 
 return [
 	'characters' => '/characters',
-	'comics' => '/',
+	'comics' => '/comics',
 	'movies' => '/movies',
-	'tv' => '/TV',
+	'tv' => '/tv',
 	'games' => '/games',
 	'collectibles' => '/collectibles',
 	'videos' => '/videos',
