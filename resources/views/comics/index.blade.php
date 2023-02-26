@@ -40,10 +40,12 @@
 						<td>{{ $comic['description'] }}</td>
 						<td>{{ $comic['sale_date'] }}</td>
 						<td class="text-center">
+							{{-- link alla page show  --}}
 							<a href="{{ route('comics.show', ['comic' => $comic['id']])}}" class="btn btn-info btn-sm btn-square" title="Dettaglio pasta">
 								<i class="fas fa-eye"></i>
 							</a>
-							<a href="#" class="btn btn-warning btn-sm btn-square" title="Dettaglio pasta">
+							{{-- link alla page edit  --}}
+							<a href="{{ route('comics.edit', ['comic' => $comic['id']])}}" class="btn btn-warning btn-sm btn-square" title="Dettaglio pasta">
 								<i class="fas fa-edit"></i>
 							</a>
 						</td>
