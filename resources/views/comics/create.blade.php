@@ -11,13 +11,26 @@
 				</div>
 				<div>
 					{{-- VISUALIZZAZIONE ERRORI  --}}
-					
+					@if($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+							<li class="fs-4">{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+					@endif
 					{{-- FROM  --}}
 					<form action="{{ route('comics.store') }}" method="POST">
 						@csrf
 						<div class="form-group mb-3">
 							<label for="input-title" class="control-label">Titolo</label>
 							<input type="text" id="input-title" name="title" class="form-control" placeholder="Inserisci titolo">
+							@error('title')
+							<div class="alert alert-danger">
+								{{ $message }}
+							</div>
+							@enderror
 						</div>
 						<div class="form-group mb-3">
 							<label for="input-type" class="control-label">Tipologia</label>
@@ -29,10 +42,20 @@
 						<div class="form-group mb-3">
 							<label for="input-series" class="control-label">Serie</label>
 							<input type="text" id="input-series" name="series" class="form-control" placeholder="Inserisci serie">
+							@error('series')
+							<div class="alert alert-danger">
+								{{ $message }}
+							</div>
+							@enderror
 						</div>
 						<div class="form-group mb-3">
 							<label for="input-price" class="control-label">Prezzo</label>
 							<input type="number" id="input-price" name="price" class="form-control" placeholder="Inserisci prezzo">
+							@error('price')
+							<div class="alert alert-danger">
+								{{ $message }}
+							</div>
+							@enderror
 						</div>
 						<div class="form-group mb-3">
 							<label for="input-image" class="control-label">Immagine</label>
