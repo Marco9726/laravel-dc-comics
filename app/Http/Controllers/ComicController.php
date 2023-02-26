@@ -111,7 +111,21 @@ class ComicController extends Controller
 	 */
 	public function edit($id)
 	{
-		//
+		$headerMenu = config('headermenu');
+
+		$footerLists = config('footerlists');
+
+		$socialArray = config('social');
+
+		$comic = Comic::find($id);
+
+		if ($comic) {
+			$data = [
+				'comic' => $comic
+			];
+			return view('comics.edit', $data, compact('headerMenu', 'footerLists', 'socialArray'));
+		}
+		abort(404);
 	}
 
 	/**
