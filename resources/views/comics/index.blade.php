@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container my-3 py-3 bg-light">
+<div class="container my-3 py-3 bg-light rounded-3">
 	<h1 class="font-pt mb-5 fw-bolder">DC COMICS</h1>
 	<div class="row px-2">
 		<div class="col-12 p-0">
-			<div class="d-flex">
+			<div class="d-flex justify-content-between">
 				<h2>Tutti i fumetti</h2>
-				{{-- <a href="#" class="btn btn-primary">Aggiungi fumetto</a> --}}
+				<a href="{{ route('comics.create')}}" class="btn btn-success" id="add-comic"><i class="fa-solid fa-plus"></i> Aggiungi un nuovo fumetto</a>
 			</div>
 		</div>
 		{{-- TABELLA --}}
@@ -26,7 +26,14 @@
 				@foreach ($comics as $comic)
 					<tr>
 						<td>{{ $comic['id'] }}</td>
-						<td><img src="{{ $comic['thumb'] }}" alt="" class="w-75"></td>
+						<td>
+							@if (!empty($comic['thumb']))
+							<img src="{{ $comic['thumb'] }}" alt="" class="w-75">
+							@else
+							<h5 class="text-danger">immagine mancante</h5>
+							<img src="https://i.imgflip.com/4/lphi1.jpg"  class="w-75" alt="">
+							@endif
+						</td>
 						<td>{{ $comic['title'] }}</td>
 						<td>{{ $comic['series'] }}</td>
 						<td>{{ $comic['price'] }}&euro;</td>

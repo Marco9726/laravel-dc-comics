@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container id="showContainer">
+<div class="container" id="showContainer">
 	<div class="row justify-content-center">
 		<div class="col-12 py-3">
 			<div class="d-flex justify-content-between align-items-center">
@@ -13,6 +13,7 @@
 		<img src="{{ $comic['thumb']}}" alt="" class="w-25">
 		@else
 		<h5 class="text-danger">Immagine non disponile</h5>
+		<img src="https://i.imgflip.com/4/lphi1.jpg"  class="w-25" alt="">
 		@endif
 		<table class="table">
 			<tbody>
