@@ -23,6 +23,7 @@
 					{{-- FROM  --}}
 					<form action="{{ route('comics.update', $comic->id) }}" method="POST">
 						@csrf
+						@method('PUT')
 						<div class="form-group mb-3">
 							<label for="input-title" class="control-label">Titolo</label>					{{--se old('title') risulta vera, viene mostrata --}}
 							<input type="text" id="input-title" name="title" class="form-control" placeholder="Inserisci titolo" value="{{ old('title') ?? $comic->title }}">
@@ -67,10 +68,10 @@
 						</div>
 						<div class="form-group mb-3">
 							<label for="input-description" class="control-label">Descrizione</label>    {{--se old('description') risulta vera, viene mostrata --}}
-							<textarea id="input-description" name="description" class="form-control" placeholder="Inserisci una descrizione" rows="10" value="{{ old('description') ?? $comic->description }}"></textarea>
+							<textarea id="input-description" name="description" class="form-control" placeholder="Inserisci una descrizione" rows="10">{{ old('description') ?? $comic->description }}</textarea>
 						</div>
 						<div class="form-group mb-3">
-							<button type="submit" class="btn btn-primary">Invia</button>
+							<button type="submit" class="btn btn-primary">Salva modifiche</button>
 						</div>
 					</form>
 				</div>
@@ -78,6 +79,5 @@
 		</div>
 	</div>
 </section>
-
 
 @endsection

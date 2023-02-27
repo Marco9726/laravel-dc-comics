@@ -53,9 +53,9 @@ class ComicController extends Controller
 			'title' => 'required||max:40',
 			'description' => 'nullable',
 			'tumb' => 'nullable',
-			'price' => 'required||max:10',
+			'price' => 'required||decimal:0,2|between:0,199',
 			'series' => 'required||max:50',
-			'sale_date' => 'nullable',
+			'sale_date' => 'nullable|date_format:Y-m-d',
 			'type' => 'required||max:30'
 		]);
 
@@ -137,7 +137,23 @@ class ComicController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		//
+		$comic = Comic::findOrFail($id);
+
+		$request->validate([
+			'title' => 'required||max:40',
+			'description' => 'nullable',
+			'tumb' => 'nullable',
+			'price' => 'required||decimal:0,2|between:0,199',
+			'series' => 'required||max:50',
+			'sale_date' => 'nullable|date_format:Y-m-d',
+			'type' => 'required||max:30'
+		]);
+
+		$form_data = $request->all();
+
+		$comic->update($form_data);
+
+		return redirect()->route('comics.show', ['comic' => $comic->id]);
 	}
 
 	/**

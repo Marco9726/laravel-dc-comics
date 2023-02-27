@@ -50,7 +50,7 @@
 						</div>
 						<div class="form-group mb-3">
 							<label for="input-price" class="control-label">Prezzo</label>
-							<input type="number" id="input-price" name="price" class="form-control" placeholder="Inserisci prezzo">
+							<input type="number" id="input-price" name="price" class="form-control" min="0" max="200" step="0.01" placeholder="Inserisci prezzo">
 							@error('price')
 							<div class="alert alert-danger">
 								{{ $message }}
