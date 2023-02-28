@@ -48,6 +48,14 @@
 								<a href="{{ route('comics.edit', ['comic' => $comic['id']])}}" class="btn btn-warning btn-sm btn-square" title="Dettaglio pasta">
 									<i class="fas fa-edit"></i>
 								</a>
+								{{-- DESTROY --}}
+								<form action="{{ route('comics.destroy', ['comic' => $comic->id])}}" class="d-inline-block" method="POST">
+									@csrf
+									@method('DELETE')
+									<button type="submit" class="btn btn-sm btn-square btn-danger">
+										<i class="fas fa-trash"></i>
+									</button>
+								</form>
 							</td>
 						</tr>
 					@endforeach
